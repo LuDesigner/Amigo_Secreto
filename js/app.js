@@ -87,9 +87,15 @@ function atualizarLista() {
     }
 }
 
+function allRei(index){
+    amigos.splice(index, 10);
+    atualizarLista();
+    atualizarSorteio();
+}
+
 function reiniciar() {
     amigo = [];
-    // excluirAmigo();
+    allRei();
     document.getElementById('lista-amigos').innerHTML = '';
     document.getElementById('lista-sorteio').innerHTML = '';
 }
