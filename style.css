@@ -218,6 +218,16 @@ body {
   color: #1875e8;
 }
 
+#lista-amigos{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 200px;
+}
+
+.paragrafo-nome{
+  margin-left: 1em;
+}
 
 /* Tag assinatura */
 
