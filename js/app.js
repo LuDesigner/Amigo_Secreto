@@ -4,20 +4,11 @@ function adicionar(){
     let amigo = document.getElementById('nome-amigo');
     let lista = document.getElementById('lista-amigos');
 
-    amigos.push(amigo.value);
-
-    // if (amigo.value == '') {
-    //     alert('Você precisa adicionar o nome do amigo!');
-    //     return;
-    // }
-
-    // if(amigos.includes(amigo.value)) {
-    //    alert('Nome já adicionado'); 
-    //    return;
-    // }
-
-    // let lista = document.getElementById('lista-amigos');
-    // amigos.push(amigo.value);
+    if(amigo.value == ""){
+        alert("Precisa por algum nome")
+    } else {
+        amigos.push(amigo.value);
+    }
 
     if (lista.textContent == '') {
         lista.textContent = amigo.value;
@@ -39,7 +30,7 @@ function sortear() {
 
     embaralha(amigos);
     let sorteio = document.getElementById('lista-sorteio')
-
+    sorteio.innerHTML = '';
     for (let i = 0; i < amigos.length; i ++) {
         if(i == amigos.length - 1){
             sorteio.innerHTML = sorteio.innerHTML + amigos[i] + ' --> ' + amigos[0] + '<br';
@@ -77,6 +68,7 @@ function atualizarLista() {
     for (let i = 0; i < amigos.length; i++) {
 
         let paragrafo = document.createElement('p');
+        paragrafo.classList.add('paragrafo-nome');
         paragrafo.textContent = amigos [i];
 
         paragrafo.addEventListener('click', function(){
